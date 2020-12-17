@@ -9,11 +9,17 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/vue-fontawesome": "^2.0.0",
+    "@nuxtjs/apollo": "^4.0.1-rc.5",
     "core-js": "^3.6.5",
     "foundation-sites": "^6.6.3",
+    "graphql": "^15.4.0",
     "jquery": "^3.5.1",
     "motion-ui": "^2.0.3",
     "nuxt": "^2.14.6",
+    "qonfucius-nuxt-fontawesome": "^1.0.1",
     "webpack": "^5.10.3"
   },
   "devDependencies": {

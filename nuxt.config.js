@@ -9,13 +9,14 @@ export default {
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [{ lang: 'scss', src: '@/assets/scss/app.scss' }],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
+  plugins: ['~/plugins/fontawesome.js'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -24,7 +25,14 @@ export default {
   buildModules: [],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: [],
+  modules: ['qonfucius-nuxt-fontawesome', '@nuxtjs/apollo'],
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'http://localhost:1337/graphql',
+      },
+    },
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},

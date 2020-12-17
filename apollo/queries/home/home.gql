@@ -1,0 +1,6 @@
+query Home {
+  home {
+    title
+    bio
+  }
+}
