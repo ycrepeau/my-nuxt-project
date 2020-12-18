@@ -1,6 +1,12 @@
 <template lang="pug">
-  .project
-    |  Hello {{projects[0].description}}
+  
+  div(v-if="$apollo.loading")
+    | Loading data from strapi server...
+  div(v-else)
+    p {{projects[0].title}}
+    p(v-for="category in projects[0].categories" :key="category.id")
+      | {{category.title}}
+    p {{projects[0].description}}
   
 </template>
 
@@ -16,13 +22,12 @@ export default {
 
   data() {
     return {
-      projects: {},
+      projects: [],
       query: '',
     }
   },
   apollo: {
     projects: {
-      prefetch: true,
       query: projectQuery,
       variables() {
         return { id: this.$route.params.id }

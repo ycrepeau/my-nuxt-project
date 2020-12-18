@@ -4,5 +4,13 @@ query($id: String!) {
     slug
     title
     description
+    categories {
+      id
+      title
+    }
+    coverImage {
+      id
+      url
+    }
   }
 }
