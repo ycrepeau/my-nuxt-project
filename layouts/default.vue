@@ -1,7 +1,12 @@
 <template lang="pug">
 .layout
-  header.header.
-    The header will be located here
+  header.header
+    ul.menu
+      li
+        NuxtLink(to="/") Home
+      li
+        NuxtLink(to="/projects") Projects
+
   .container
     Nuxt
 
@@ -19,9 +24,7 @@ export default {
 @import '@/assets/scss/app.scss';
 .header {
   box-sizing: content-box;
-  color: $primary-color;
-  background-color: $secondary-color;
-  height: 24px;
+  background-color: $dark-gray;
   padding: 10px;
 }
 .container {
