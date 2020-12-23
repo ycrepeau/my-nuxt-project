@@ -1,12 +1,14 @@
 <template lang="pug">
   
-  div(v-if="$apollo.loading")
+  div(v-if="waitData")
     | Loading data from strapi server...
   div(v-else)
     p {{projects[0].title}}
     p(v-for="category in projects[0].categories" :key="category.id")
       | {{category.title}}
     p {{projects[0].description}}
+    div(v-for="content in projects[0].content")
+      p Content-type: {{content.__typename}}
   
 </template>
 
@@ -32,6 +34,11 @@ export default {
       variables() {
         return { id: this.$route.params.id }
       },
+    },
+  },
+  computed: {
+    waitData() {
+      return this.$apollo.loading || this.projects.length === 0
     },
   },
   methods: {
