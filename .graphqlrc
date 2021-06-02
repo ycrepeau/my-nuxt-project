@@ -1,1 +1,3 @@
-schema: http://localhost:1337/graphql
+schema: 
+- ./introspectionSchema.json
+- http://localhost:1337/graphql

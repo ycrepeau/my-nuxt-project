@@ -1,0 +1,10 @@
+query {
+  about {
+    content {
+      __typename
+      ... on ComponentSectionsRichText {
+        id
+      }
+    }
+  }
+}

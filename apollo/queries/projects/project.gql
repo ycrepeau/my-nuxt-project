@@ -13,10 +13,14 @@ query($id: String!) {
       url
     }
     content {
-      __typename
       ... on ComponentSectionsRichText {
-        id
         content
+      }
+      ... on ComponentSectionsLargeMedia {
+        description
+      }
+      ... on ComponentSectionsImagesSlider {
+        title
       }
     }
   }
